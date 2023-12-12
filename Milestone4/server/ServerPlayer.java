@@ -1,0 +1,22 @@
+package Milestone4.server;
+import Milestone4.common.Player;
+
+public class ServerPlayer extends Player {
+    private ServerThread client;
+
+    public void setClient(ServerThread client) {
+        this.client = client;
+    }
+
+    public ServerThread getClient() {
+        return this.client;
+    }
+
+    public ServerPlayer(ServerThread client) {
+        setClient(client);
+    }
+
+    public boolean equals(ServerPlayer sp){
+        return client.getClientId() == sp.getClient().getClientId();
+    }
+}
